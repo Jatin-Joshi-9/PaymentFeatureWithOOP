@@ -35,7 +35,7 @@ PaymentFeatureWithOOP/
 ## Getting Started
 
 ### Prerequisites
-- Java 8 or higher installed
+- Java installed
 - Terminal/Command prompt access
 
 ### Running the Application
