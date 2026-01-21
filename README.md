@@ -40,84 +40,83 @@ PaymentFeatureWithOOP/
 
 ### Running the Application
 
-1. **Navigate to the project directory:**
+To run the application, follow these steps:
+
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP.git
+    ```
+
+2. **Navigate into the cloned directory:**
     ```bash
     cd PaymentFeatureWithOOP
     ```
 
-2. **Compile all Java files:**
+3. **Compile all Java files:**
     ```bash
     javac -d . *.java
     ```
 
-3. **Run the application:**
+4. **Run the application:**
     ```bash
     java TG_Tasks.PaymentFeatureWithOOP.Main
     ```
 
+Make sure you have the necessary prerequisites installed before running the application.
 
 
-    ## OOP Principles Used in This Project
 
-    ### 1. Encapsulation
-    Encapsulation is achieved by **hiding internal data** and exposing only controlled operations.
+## OOP Principles Used
 
-    - `Account` encapsulates the `balance` field.
-    - Balance cannot be modified directly from outside the class.
-    - Changes are allowed only via `credit()` and `debit()` methods.
+### 1. Encapsulation
+Hiding internal data and exposing controlled operations.
 
-    **Where it is implemented:**
-    - [`Account.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/Account.java)
+- `Account` encapsulates the `balance` field
+- Balance modifications only through `credit()` and `debit()` methods
 
-    ---
+**Implementation:** [`Account.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/Account.java)
 
-    ### 2. Abstraction
-    Abstraction is achieved using a **Java interface**.
+---
 
-    - `PaymentMethod` defines *what* a payment should do.
-    - It does not define *how* the payment is performed.
-    - Concrete classes provide their own implementations.
+### 2. Abstraction
+Using a Java interface to define contracts without implementation details.
 
-    **Where it is implemented:**
-    - [`PaymentMethod.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/PaymentMethod.java)
+- `PaymentMethod` defines *what* a payment should do
+- Concrete classes implement *how* payments are performed
 
-    ---
+**Implementation:** [`PaymentMethod.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/PaymentMethod.java)
 
-    ### 3. Inheritance (Interface Inheritance)
-    This project uses **interface-based inheritance**.
+---
 
-    In Java, inheritance is not limited to `extends`.  
-    Classes can also inherit a **behavioral contract** using `implements`.
+### 3. Inheritance
+Interface-based inheritance through `implements` keyword.
 
-    - `PaymentMethod` is an interface.
-    - Payment classes inherit its contract using `implements`.
+- Payment classes inherit behavioral contracts from `PaymentMethod`
+- Promotes code reusability and consistent interfaces
 
-    This is known as **interface inheritance**.
+**Implementation:**
+- [`UPIPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/UPIPayment.java)
+- [`CardPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/CardPayment.java)
+- [`NetBankingPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/NetBankingPayment.java)
 
-    **Where it is implemented:**
-    - [`UPIPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/UPIPayment.java)
-    - [`NetBankingPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/NetBankingPayment.java)
-    - [`CreditCardPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/CreditCardPayment.java)
+---
 
-    ---
+### 4. Polymorphism
+Runtime method resolution through interface inheritance.
 
-    ### 4. Polymorphism
-    Polymorphism is achieved through **interface inheritance**.
+- Different payment types implement the same interface
+- Runtime determines which `pay()` method executes
 
-    - Different payment types implement the same interface.
-    - The same `PaymentMethod` reference can point to different implementations.
-    - The correct `pay()` method is resolved at runtime.
+**Implementation:**
+- [`UPIPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/UPIPayment.java)
+- [`CardPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/CardPayment.java)
+- [`NetBankingPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/NetBankingPayment.java)
 
-    **Where it is implemented:**
-    - [`UPIPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/UPIPayment.java)
-    - [`NetBankingPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/NetBankingPayment.java)
-    - [`CreditCardPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/CreditCardPayment.java)
 
-    ---
+**Example:**
+```java
+PaymentMethod payment = new UPIPayment(account);
+payment.pay(1000);
+```
 
-    Example:
-    ```java
-    PaymentMethod payment = new UPIPayment(account);
-    payment.pay(1000);
-    ```
 
