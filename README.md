@@ -101,36 +101,6 @@ PaymentFeatureWithOOP/
 
     ---
 
-    ### 2. Abstraction
-    Abstraction is achieved using a **Java interface**.
-
-    - `PaymentMethod` defines *what* a payment should do.
-    - It does not define *how* the payment is performed.
-    - Concrete classes provide their own implementations.
-
-    **Where it is implemented:**
-    - [`PaymentMethod.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/PaymentMethod.java)
-
-    ---
-
-    ### 3. Inheritance (Interface Inheritance)
-    This project uses **interface-based inheritance**.
-
-    In Java, inheritance is not limited to `extends`.  
-    Classes can also inherit a **behavioral contract** using `implements`.
-
-    - `PaymentMethod` is an interface.
-    - Payment classes inherit its contract using `implements`.
-
-    This is known as **interface inheritance**.
-
-    **Where it is implemented:**
-    - [`UPIPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/UPIPayment.java)
-    - [`NetBankingPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/NetBankingPayment.java)
-    - [`CardPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/CardPayment.java)
-
-    ---
-
     ### 4. Polymorphism
     Polymorphism is achieved through **interface inheritance**.
 
@@ -138,8 +108,16 @@ PaymentFeatureWithOOP/
     - The same `PaymentMethod` reference can point to different implementations.
     - The correct `pay()` method is resolved at runtime.
 
+    **Where it is implemented:**
+    - [`UPIPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/UPIPayment.java)
+    - [`NetBankingPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/NetBankingPayment.java)
+    - [`CreditCardPayment.java`](https://github.com/Jatin-Joshi-9/PaymentFeatureWithOOP/blob/main/CreditCardPayment.java)
+
+    ---
+
     Example:
     ```java
     PaymentMethod payment = new UPIPayment(account);
     payment.pay(1000);
     ```
+
