@@ -7,7 +7,7 @@ Object-Oriented Programming principles.
 
 ## Objective
 - Design a simple payment system using Java
-- Apply core OOP principles (abstraction, encapsulation, polymorphism)
+- Apply core OOP principles (abstraction, encapsulation, polymorphism, Inheritence)
 - Keep business logic minimal and easy to understand
 - Follow atomic Git commit practices
 
